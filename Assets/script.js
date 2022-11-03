@@ -12,8 +12,10 @@ var twoPM = document.getElementById("2PM");
 var threePM = document.getElementById("3PM");
 var fourPM = document.getElementById("4PM");
 var fivePM = document.getElementById("5PM");
+
 // display current date at top of application.
 $("#today").text(today);
+
 // change css based on if time slot is past, preset, or future.
 if (time > 8) {
   eightAM.classList.add("past");
@@ -96,10 +98,62 @@ if (time > 17) {
 }
 
 var description = document.querySelectorAll(".description");
-var text = localStorage.getItem("description");
-description.textContent = text;
-$(".saveBtn").click(function(event){
-    console.log(event.target.parentElement.children[1].children[0].innerText);
-    console.log(event.target.parentElement.children[1].id);
-localStorage.setItem("description"+event.target.parentElement.children[1].id,event.target.parentElement.children[1].children[0].innerText);
+// var text = localStorage.getItem("description");
+// description.textContent = text;
+
+// function to save p element to local storage.
+$(".saveBtn").click(function (event) {
+  console.log(event.target.parentElement.children[1].children[0].innerText);
+  console.log(event.target.parentElement.children[1].id);
+  localStorage.setItem(
+    "description" + event.target.parentElement.children[1].id,
+    event.target.parentElement.children[1].children[0].innerText
+  );
 });
+
+// function to retrieve saved p element from local storage
+function savedEvents() {
+  // var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
+  var eightAMSaved = localStorage.getItem("description8AM");
+  var nineAMSaved = localStorage.getItem("description9AM");
+  var tenAMSaved = localStorage.getItem("description10AM");
+  var elevenAMSaved = localStorage.getItem("description11AM");
+  var noonSaved = localStorage.getItem("description12PM");
+  var onePMSaved = localStorage.getItem("description1PM");
+  var twoPMSaved = localStorage.getItem("description2PM");
+  var threePMSaved = localStorage.getItem("description3PM");
+  var fourPMSaved = localStorage.getItem("description4PM");
+  var fivePMSaved = localStorage.getItem("description5PM");
+  if (eightAMSaved !== null) {
+    document.getElementById("8AM").children[0].innerHTML = eightAMSaved;
+  }
+  if (nineAMSaved !== null) {
+    document.getElementById("9AM").children[0].innerHTML = nineAMSaved;
+  }
+  if (tenAMSaved !== null) {
+    document.getElementById("10AM").children[0].innerHTML = tenAMSaved;
+  }
+  if (elevenAMSaved !== null) {
+    document.getElementById("11AM").children[0].innerHTML = elevenAMSaved;
+  }
+  if (noonSaved !== null) {
+    document.getElementById("12PM").children[0].innerHTML = noonSaved;
+  }
+  if (onePMSaved !== null) {
+    document.getElementById("1PM").children[0].innerHTML = onePMSaved;
+  }
+  if (twoPMSaved !== null) {
+    document.getElementById("2PM").children[0].innerHTML = twoPMSaved;
+  }
+  if (threePMSaved !== null) {
+    document.getElementById("3PM").children[0].innerHTML = threePMSaved;
+  }
+  if (fourPMSaved !== null) {
+    document.getElementById("4PM").children[0].innerHTML = fourPMSaved;
+  }
+  if (fivePMSaved !== null) {
+    document.getElementById("5PM").children[0].innerHTML = fivePMSaved;
+  }
+}
+//  call function to load saved events
+savedEvents();
