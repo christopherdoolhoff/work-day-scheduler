@@ -95,9 +95,10 @@ if (time > 17) {
   fivePM.classList.add("future");
 }
 
-var description = document.querySelector(".description");
+var description = document.querySelectorAll(".description");
 var text = localStorage.getItem("description");
 description.textContent = text;
-$(".saveBtn").click(function(){
-localStorage.setItem("description",description);
+$(".saveBtn").click(function(event){
+    console.log(event.target.parentElement.children[1].children[0].innerText);
+localStorage.setItem("description",event.target.parentElement.children[1].children[0].innerText);
 });
