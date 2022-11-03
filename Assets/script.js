@@ -100,5 +100,6 @@ var text = localStorage.getItem("description");
 description.textContent = text;
 $(".saveBtn").click(function(event){
     console.log(event.target.parentElement.children[1].children[0].innerText);
-localStorage.setItem("description",event.target.parentElement.children[1].children[0].innerText);
+    console.log(event.target.parentElement.children[1].id);
+localStorage.setItem("description"+event.target.parentElement.children[1].id,event.target.parentElement.children[1].children[0].innerText);
 });
