@@ -12,6 +12,7 @@ var twoPM = document.getElementById("2PM");
 var threePM = document.getElementById("3PM");
 var fourPM = document.getElementById("4PM");
 var fivePM = document.getElementById("5PM");
+var description = document.querySelectorAll(".description");
 
 // display current date at top of application.
 $("#today").text(today);
@@ -24,7 +25,7 @@ if (time > 8) {
 } else {
   eightAM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 9) {
   nineAM.classList.add("past");
 } else if (time == 9) {
@@ -32,7 +33,7 @@ if (time > 9) {
 } else {
   nineAM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 10) {
   tenAM.classList.add("past");
 } else if (time == 10) {
@@ -40,7 +41,7 @@ if (time > 10) {
 } else {
   tenAM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 11) {
   elevenAM.classList.add("past");
 } else if (time == 11) {
@@ -48,7 +49,7 @@ if (time > 11) {
 } else {
   elevenAM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 12) {
   noon.classList.add("past");
 } else if (time == 12) {
@@ -56,7 +57,7 @@ if (time > 12) {
 } else {
   noon.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 13) {
   onePM.classList.add("past");
 } else if (time == 13) {
@@ -64,7 +65,7 @@ if (time > 13) {
 } else {
   onePM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 14) {
   twoPM.classList.add("past");
 } else if (time == 14) {
@@ -72,7 +73,7 @@ if (time > 14) {
 } else {
   twoPM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 15) {
   threePM.classList.add("past");
 } else if (time == 15) {
@@ -80,7 +81,7 @@ if (time > 15) {
 } else {
   threePM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 16) {
   fourPM.classList.add("past");
 } else if (time == 16) {
@@ -88,7 +89,7 @@ if (time > 16) {
 } else {
   fourPM.classList.add("future");
 }
-
+// change css based on if time slot is past, preset, or future.
 if (time > 17) {
   fivePM.classList.add("past");
 } else if (time == 17) {
@@ -96,10 +97,6 @@ if (time > 17) {
 } else {
   fivePM.classList.add("future");
 }
-
-var description = document.querySelectorAll(".description");
-// var text = localStorage.getItem("description");
-// description.textContent = text;
 
 // function to save p element to local storage.
 $(".saveBtn").click(function (event) {
